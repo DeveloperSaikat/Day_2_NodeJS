@@ -1,0 +1,45 @@
+h1 {
+    color: tomato;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-bottom: 20px;
+    width: 450px;
+    background-color: aqua;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    border: black solid 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card .card_actions {
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: black solid 2px;
+}
+
+.card .card_actions .btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: tomato;
+    border: black solid 2px;
+    margin: 10px;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <main> 
+        <% if (prods.length > 0) { %>
+            <div class='grid'>
+                <% for (let product of prods) { %>
+                    <article class="card product-item">
+                        <header class="card_header">
+                            <h1 class="product_title">
+                                <%= product.title %>
+                            </h1>
+                        </header>
+                        <div class="card_actions">
+                            <a href="/product/<%= product._id %>" class="btn">Details</a>
+                            <a href="/admin/edit-product/<%= product._id %>?edit=true" class="btn">Edit</a>
+                            <form method="POST" action="/product/add-to-cart">
+                                <button class="btn">Add to cart</button>
+                             <input type="hidden" name="productId" value="<%= product._id %>">
+                            </form> 
+                            <form method="POST" action="/admin/delete-product">
+                                <button class="btn">Delete</button>
+                             <input type="hidden" name="productId" value="<%= product._id %>">
+                            </form> 
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %> 
+            <h1>No product found</h1>
+        <% } %>
+    </main>
+</body>
+</html>
